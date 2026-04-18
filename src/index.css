@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+  --color-ios-bg: #F2F2F7;
+  --color-ios-accent: #007AFF;
+  --color-wechat-green: #07C160;
+  --color-text-primary: #1C1C1E;
+  --color-text-secondary: #8E8E93;
+  --color-card-bg: rgba(255, 255, 255, 0.94);
+  --color-paper: #F8F6F1;
+  --shadow-ios: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-app-icon: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+@layer base {
+  body {
+    @apply bg-black text-text-primary font-sans antialiased;
+  }
+}
+
+@utility ios-glass {
+  background: var(--color-card-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+@utility ios-card {
+  @apply bg-white/94 backdrop-blur-xl rounded-2xl shadow-ios;
+}
+
+@utility ios-shadow {
+  box-shadow: var(--shadow-ios);
+}
+
+@utility app-icon-shadow {
+  box-shadow: var(--shadow-app-icon);
+}
+
